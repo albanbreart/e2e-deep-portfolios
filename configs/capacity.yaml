@@ -1,0 +1,16 @@
+# Capacity check: the same 212 anomalies, rebuilt using only stocks above the
+# NYSE 20th percentile of market capitalisation.
+#
+# Published anomaly returns are concentrated in small, illiquid names -- the mean
+# long-short return of this universe is 0.348 %/month against 0.499 % for the
+# unrestricted one, a 30 % haircut before a single basis point of cost. The
+# question is whether the ranking of objectives survives once the strategies are
+# restricted to stocks a fund could trade at size.
+universe:
+  portfolio_set: "ex_nyse_p20_me"
+
+split:
+  train_start: "1994-01-31"
+  first_test_year: 2008
+  val_years: 4
+  embargo_months: 12

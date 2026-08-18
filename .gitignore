@@ -1,0 +1,24 @@
+# Data is never committed: the raw archive is 2.4 GB and CRSP is licensed.
+data/raw/*
+data/interim/*
+data/processed/*
+data/external/*
+!data/**/.gitkeep
+
+# Out-of-sample predictions ARE committed (~17 MB): they let a reader run
+# `make evaluate` and regenerate every table and figure in seconds, without the
+# 2.5-hour training run. Raw data is not -- it is 3.6 GB and freely downloadable.
+outputs/**/*.download
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.ipynb_checkpoints/
+
+.DS_Store
+report/*.aux
+report/*.log
+report/*.out
+report/*.synctex.gz

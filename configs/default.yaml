@@ -1,0 +1,49 @@
+# Every tunable in one place. Anything not listed here falls back to the
+# dataclass defaults in src/xsdp/config.py, which document what each field means.
+
+universe:
+  # The asset universe is the set of PUBLISHED cross-sectional anomalies, and it
+  # is point-in-time: an anomaly becomes investable in the January after its
+  # paper appeared. That screen is why the sample starts in 1994 -- before then,
+  # fewer than 20 anomalies had been published.
+  start: "1973-01-31"
+  end: "2024-12-31"
+  min_assets_per_month: 20
+  min_history_months: 60
+
+split:
+  train_start: "1994-01-31"
+  first_test_year: 2008        # ~14 years of history before the first prediction
+  val_years: 4
+  test_step_years: 1           # refit every year
+  embargo_months: 12           # annual accounting data spans the boundary
+  expanding: true
+
+costs:
+  # Holding an anomaly costs its own monthly turnover times the per-stock
+  # spread; turnover is MEASURED from the firm-level signals, not assumed, and
+  # ranges from ~0.02 (BM) to ~2.1 (MaxRet) per month. Switching the allocation
+  # costs twice the one-way spread, since a gross-2 book has to be built or
+  # unwound.
+  spread_bps: 25.0
+  switch_bps: 25.0
+  short_fee_bps_annual: 100.0
+  sensitivity_multipliers: [0.0, 0.5, 1.0, 2.0, 3.0, 4.0]
+
+portfolio:
+  scheme: "tilt"               # 1/N plus a dollar-neutral tilt
+  tilt_gross: 1.0              # L1 size of the tilt relative to the 1/N base
+  gross_leverage: 1.0
+  max_weight: 0.10             # per-anomaly cap
+  n_quantiles: 5
+  vol_target_annual: 0.10
+
+train:
+  seed: 0
+  n_ensemble: 5                # neural results are averaged over seeds
+  max_epochs: 120
+  patience: 15
+  batch_months: 36             # a training example is 36 consecutive cross-sections
+  lr: 0.001
+  weight_decay: 0.00001
+  device: "auto"               # mps > cuda > cpu

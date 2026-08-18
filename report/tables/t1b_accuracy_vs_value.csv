@@ -1,0 +1,4 @@
+metric,spearman_vs_sharpe_net,p_value,n_models
+ic_mean,-0.139,0.701,10
+ic_t,0.503,0.138,10
+oos_r2_pct,-0.091,0.803,10

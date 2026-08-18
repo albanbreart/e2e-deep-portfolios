@@ -1,0 +1,10 @@
+# Fast configuration for CI and for the first run on a new machine.
+split:
+  first_test_year: 2018
+  val_years: 3
+  embargo_months: 6
+train:
+  n_ensemble: 1
+  max_epochs: 8
+  patience: 3
+  batch_months: 24
