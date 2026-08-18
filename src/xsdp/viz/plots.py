@@ -360,3 +360,49 @@ def turnover_bars(profile: pd.DataFrame, *,
     ax.margins(x=0.10)
     S.title(ax, title, subtitle)
     return fig
+
+
+def capacity_scatter(wide: pd.DataFrame, *, rho: float | None = None,
+                     title: str = "Does the edge survive in tradable stocks?",
+                     subtitle: str = "Net Sharpe ratio, same models, two universes"):
+    """Each model once: unrestricted universe on x, large-cap-only on y.
+
+    A scatter puts every pair of colours on screen at once, which a categorical
+    palette cannot guarantee to separate beyond three slots, so identity is
+    carried by a text label on every point and colour marks only the two
+    cost-aware objectives and the benchmark.  The 45-degree line is the
+    reference: points below it lost ground when the universe was restricted to
+    stocks a fund could actually trade at size.
+    """
+    x, y = wide["all stocks"], wide["large caps only"]
+    fig, ax = plt.subplots(figsize=S.FIGSIZE)
+
+    lo = float(min(x.min(), y.min())) - 0.08
+    hi = float(max(x.max(), y.max())) + 0.08
+    ax.plot([lo, hi], [lo, hi], color=S.RULE, lw=0.9, ls=(0, (4, 3)), zorder=1)
+
+    for _, row in wide.iterrows():
+        m = row["model"]
+        if m in ("xs_utility", "xs_sharpe"):
+            c, ink = S.colour(0), S.INK
+        elif m == "equal_weight":
+            c, ink = S.INK_2, S.INK
+        else:
+            c, ink = S.MUTED, S.INK_2
+        ax.scatter(row["all stocks"], row["large caps only"], s=48, color=c,
+                   zorder=3, edgecolor=S.SURFACE, linewidth=1.4)
+        ax.annotate(m, (row["all stocks"], row["large caps only"]),
+                    xytext=(6, 0), textcoords="offset points", fontsize=7.8,
+                    color=ink, va="center")
+
+    S.zero_line(ax)
+    S.zero_line(ax, axis="x")
+    ax.set_xlim(lo, hi)
+    ax.set_ylim(lo, hi)
+    ax.set_xlabel("Net Sharpe, all stocks")
+    ax.set_ylabel("Net Sharpe, large caps only")
+    if rho is not None:
+        ax.annotate(f"rank correlation {rho:+.2f}", xy=(0.98, 0.04),
+                    xycoords="axes fraction", ha="right", fontsize=8, color=S.INK_2)
+    S.title(ax, title, subtitle)
+    return fig
