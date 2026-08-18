@@ -393,7 +393,7 @@ def capacity_scatter(wide: pd.DataFrame, *, rho: float | None = None,
         label_y.append(y_lab)
         last = y_lab
 
-    for row, y_lab in zip(pts, label_y):
+    for row, y_lab in zip(pts, label_y, strict=False):
         m = row["model"]
         if m in ("xs_utility", "xs_sharpe"):
             c, ink = S.colour(0), S.INK
