@@ -381,7 +381,19 @@ def capacity_scatter(wide: pd.DataFrame, *, rho: float | None = None,
     hi = float(max(x.max(), y.max())) + 0.08
     ax.plot([lo, hi], [lo, hi], color=S.RULE, lw=0.9, ls=(0, (4, 3)), zorder=1)
 
-    for _, row in wide.iterrows():
+    # Label placement: points that sit close together get their labels pushed
+    # apart vertically, otherwise the near-ties (xs_utility/xs_sharpe,
+    # pls/ridge) overprint each other and the chart loses the identities it
+    # exists to show.
+    pts = sorted(wide.to_dict("records"), key=lambda r: r["large caps only"])
+    span = (hi - lo) or 1.0
+    label_y, last = [], -1e9
+    for row in pts:
+        y_lab = max(row["large caps only"], last + 0.045 * span)
+        label_y.append(y_lab)
+        last = y_lab
+
+    for row, y_lab in zip(pts, label_y):
         m = row["model"]
         if m in ("xs_utility", "xs_sharpe"):
             c, ink = S.colour(0), S.INK
@@ -391,9 +403,9 @@ def capacity_scatter(wide: pd.DataFrame, *, rho: float | None = None,
             c, ink = S.MUTED, S.INK_2
         ax.scatter(row["all stocks"], row["large caps only"], s=48, color=c,
                    zorder=3, edgecolor=S.SURFACE, linewidth=1.4)
-        ax.annotate(m, (row["all stocks"], row["large caps only"]),
-                    xytext=(6, 0), textcoords="offset points", fontsize=7.8,
-                    color=ink, va="center")
+        ax.annotate(m, (row["all stocks"], y_lab), xytext=(7, 0),
+                    textcoords="offset points", fontsize=7.8, color=ink,
+                    va="center", annotation_clip=False)
 
     S.zero_line(ax)
     S.zero_line(ax, axis="x")

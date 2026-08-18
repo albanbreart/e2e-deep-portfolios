@@ -1,0 +1,802 @@
+[
+  {
+    "fold": "200801-200812",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "200801-200812",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "200801-200812",
+    "model": "enet",
+    "seconds": 0.2
+  },
+  {
+    "fold": "200801-200812",
+    "model": "pls",
+    "seconds": 0.0
+  },
+  {
+    "fold": "200801-200812",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "200801-200812",
+    "model": "nn3_mse",
+    "seconds": 10.3
+  },
+  {
+    "fold": "200801-200812",
+    "model": "xs_mse",
+    "seconds": 48.5
+  },
+  {
+    "fold": "200801-200812",
+    "model": "xs_ic",
+    "seconds": 9.1
+  },
+  {
+    "fold": "200801-200812",
+    "model": "xs_sharpe",
+    "seconds": 10.9
+  },
+  {
+    "fold": "200801-200812",
+    "model": "xs_utility",
+    "seconds": 10.6
+  },
+  {
+    "fold": "200901-200912",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "200901-200912",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "200901-200912",
+    "model": "enet",
+    "seconds": 0.2
+  },
+  {
+    "fold": "200901-200912",
+    "model": "pls",
+    "seconds": 0.0
+  },
+  {
+    "fold": "200901-200912",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "200901-200912",
+    "model": "nn3_mse",
+    "seconds": 11.3
+  },
+  {
+    "fold": "200901-200912",
+    "model": "xs_mse",
+    "seconds": 52.2
+  },
+  {
+    "fold": "200901-200912",
+    "model": "xs_ic",
+    "seconds": 10.5
+  },
+  {
+    "fold": "200901-200912",
+    "model": "xs_sharpe",
+    "seconds": 15.4
+  },
+  {
+    "fold": "200901-200912",
+    "model": "xs_utility",
+    "seconds": 13.1
+  },
+  {
+    "fold": "201001-201012",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201001-201012",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201001-201012",
+    "model": "enet",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201001-201012",
+    "model": "pls",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201001-201012",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201001-201012",
+    "model": "nn3_mse",
+    "seconds": 12.6
+  },
+  {
+    "fold": "201001-201012",
+    "model": "xs_mse",
+    "seconds": 60.3
+  },
+  {
+    "fold": "201001-201012",
+    "model": "xs_ic",
+    "seconds": 12.3
+  },
+  {
+    "fold": "201001-201012",
+    "model": "xs_sharpe",
+    "seconds": 13.7
+  },
+  {
+    "fold": "201001-201012",
+    "model": "xs_utility",
+    "seconds": 13.1
+  },
+  {
+    "fold": "201101-201112",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201101-201112",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201101-201112",
+    "model": "enet",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201101-201112",
+    "model": "pls",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201101-201112",
+    "model": "gbrt",
+    "seconds": 0.3
+  },
+  {
+    "fold": "201101-201112",
+    "model": "nn3_mse",
+    "seconds": 11.9
+  },
+  {
+    "fold": "201101-201112",
+    "model": "xs_mse",
+    "seconds": 65.4
+  },
+  {
+    "fold": "201101-201112",
+    "model": "xs_ic",
+    "seconds": 14.2
+  },
+  {
+    "fold": "201101-201112",
+    "model": "xs_sharpe",
+    "seconds": 12.8
+  },
+  {
+    "fold": "201101-201112",
+    "model": "xs_utility",
+    "seconds": 15.3
+  },
+  {
+    "fold": "201201-201212",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201201-201212",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201201-201212",
+    "model": "enet",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201201-201212",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201201-201212",
+    "model": "gbrt",
+    "seconds": 0.3
+  },
+  {
+    "fold": "201201-201212",
+    "model": "nn3_mse",
+    "seconds": 14.5
+  },
+  {
+    "fold": "201201-201212",
+    "model": "xs_mse",
+    "seconds": 74.4
+  },
+  {
+    "fold": "201201-201212",
+    "model": "xs_ic",
+    "seconds": 14.9
+  },
+  {
+    "fold": "201201-201212",
+    "model": "xs_sharpe",
+    "seconds": 13.8
+  },
+  {
+    "fold": "201201-201212",
+    "model": "xs_utility",
+    "seconds": 14.7
+  },
+  {
+    "fold": "201301-201312",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201301-201312",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201301-201312",
+    "model": "enet",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201301-201312",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201301-201312",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201301-201312",
+    "model": "nn3_mse",
+    "seconds": 13.6
+  },
+  {
+    "fold": "201301-201312",
+    "model": "xs_mse",
+    "seconds": 65.2
+  },
+  {
+    "fold": "201301-201312",
+    "model": "xs_ic",
+    "seconds": 14.6
+  },
+  {
+    "fold": "201301-201312",
+    "model": "xs_sharpe",
+    "seconds": 15.4
+  },
+  {
+    "fold": "201301-201312",
+    "model": "xs_utility",
+    "seconds": 13.6
+  },
+  {
+    "fold": "201401-201412",
+    "model": "ols_h",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201401-201412",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201401-201412",
+    "model": "enet",
+    "seconds": 0.4
+  },
+  {
+    "fold": "201401-201412",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201401-201412",
+    "model": "gbrt",
+    "seconds": 0.3
+  },
+  {
+    "fold": "201401-201412",
+    "model": "nn3_mse",
+    "seconds": 16.2
+  },
+  {
+    "fold": "201401-201412",
+    "model": "xs_mse",
+    "seconds": 71.1
+  },
+  {
+    "fold": "201401-201412",
+    "model": "xs_ic",
+    "seconds": 14.0
+  },
+  {
+    "fold": "201401-201412",
+    "model": "xs_sharpe",
+    "seconds": 17.6
+  },
+  {
+    "fold": "201401-201412",
+    "model": "xs_utility",
+    "seconds": 17.1
+  },
+  {
+    "fold": "201501-201512",
+    "model": "ols_h",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201501-201512",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201501-201512",
+    "model": "enet",
+    "seconds": 0.6
+  },
+  {
+    "fold": "201501-201512",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201501-201512",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201501-201512",
+    "model": "nn3_mse",
+    "seconds": 15.9
+  },
+  {
+    "fold": "201501-201512",
+    "model": "xs_mse",
+    "seconds": 66.3
+  },
+  {
+    "fold": "201501-201512",
+    "model": "xs_ic",
+    "seconds": 13.4
+  },
+  {
+    "fold": "201501-201512",
+    "model": "xs_sharpe",
+    "seconds": 17.9
+  },
+  {
+    "fold": "201501-201512",
+    "model": "xs_utility",
+    "seconds": 17.8
+  },
+  {
+    "fold": "201601-201612",
+    "model": "ols_h",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201601-201612",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201601-201612",
+    "model": "enet",
+    "seconds": 0.5
+  },
+  {
+    "fold": "201601-201612",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201601-201612",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201601-201612",
+    "model": "nn3_mse",
+    "seconds": 17.1
+  },
+  {
+    "fold": "201601-201612",
+    "model": "xs_mse",
+    "seconds": 62.0
+  },
+  {
+    "fold": "201601-201612",
+    "model": "xs_ic",
+    "seconds": 14.4
+  },
+  {
+    "fold": "201601-201612",
+    "model": "xs_sharpe",
+    "seconds": 28.2
+  },
+  {
+    "fold": "201601-201612",
+    "model": "xs_utility",
+    "seconds": 20.0
+  },
+  {
+    "fold": "201701-201712",
+    "model": "ols_h",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201701-201712",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201701-201712",
+    "model": "enet",
+    "seconds": 0.7
+  },
+  {
+    "fold": "201701-201712",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201701-201712",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201701-201712",
+    "model": "nn3_mse",
+    "seconds": 18.5
+  },
+  {
+    "fold": "201701-201712",
+    "model": "xs_mse",
+    "seconds": 73.2
+  },
+  {
+    "fold": "201701-201712",
+    "model": "xs_ic",
+    "seconds": 20.7
+  },
+  {
+    "fold": "201701-201712",
+    "model": "xs_sharpe",
+    "seconds": 28.6
+  },
+  {
+    "fold": "201701-201712",
+    "model": "xs_utility",
+    "seconds": 30.2
+  },
+  {
+    "fold": "201801-201812",
+    "model": "ols_h",
+    "seconds": 0.3
+  },
+  {
+    "fold": "201801-201812",
+    "model": "ridge",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201801-201812",
+    "model": "enet",
+    "seconds": 1.2
+  },
+  {
+    "fold": "201801-201812",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201801-201812",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201801-201812",
+    "model": "nn3_mse",
+    "seconds": 19.4
+  },
+  {
+    "fold": "201801-201812",
+    "model": "xs_mse",
+    "seconds": 76.3
+  },
+  {
+    "fold": "201801-201812",
+    "model": "xs_ic",
+    "seconds": 27.4
+  },
+  {
+    "fold": "201801-201812",
+    "model": "xs_sharpe",
+    "seconds": 43.5
+  },
+  {
+    "fold": "201801-201812",
+    "model": "xs_utility",
+    "seconds": 42.5
+  },
+  {
+    "fold": "201901-201912",
+    "model": "ols_h",
+    "seconds": 0.3
+  },
+  {
+    "fold": "201901-201912",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "201901-201912",
+    "model": "enet",
+    "seconds": 1.3
+  },
+  {
+    "fold": "201901-201912",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "201901-201912",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "201901-201912",
+    "model": "nn3_mse",
+    "seconds": 17.8
+  },
+  {
+    "fold": "201901-201912",
+    "model": "xs_mse",
+    "seconds": 77.3
+  },
+  {
+    "fold": "201901-201912",
+    "model": "xs_ic",
+    "seconds": 26.2
+  },
+  {
+    "fold": "201901-201912",
+    "model": "xs_sharpe",
+    "seconds": 36.3
+  },
+  {
+    "fold": "201901-201912",
+    "model": "xs_utility",
+    "seconds": 46.5
+  },
+  {
+    "fold": "202001-202012",
+    "model": "ols_h",
+    "seconds": 0.3
+  },
+  {
+    "fold": "202001-202012",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "202001-202012",
+    "model": "enet",
+    "seconds": 1.2
+  },
+  {
+    "fold": "202001-202012",
+    "model": "pls",
+    "seconds": 0.1
+  },
+  {
+    "fold": "202001-202012",
+    "model": "gbrt",
+    "seconds": 0.2
+  },
+  {
+    "fold": "202001-202012",
+    "model": "nn3_mse",
+    "seconds": 17.1
+  },
+  {
+    "fold": "202001-202012",
+    "model": "xs_mse",
+    "seconds": 80.8
+  },
+  {
+    "fold": "202001-202012",
+    "model": "xs_ic",
+    "seconds": 19.8
+  },
+  {
+    "fold": "202001-202012",
+    "model": "xs_sharpe",
+    "seconds": 27.4
+  },
+  {
+    "fold": "202001-202012",
+    "model": "xs_utility",
+    "seconds": 44.1
+  },
+  {
+    "fold": "202101-202112",
+    "model": "ols_h",
+    "seconds": 0.3
+  },
+  {
+    "fold": "202101-202112",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "202101-202112",
+    "model": "enet",
+    "seconds": 1.1
+  },
+  {
+    "fold": "202101-202112",
+    "model": "pls",
+    "seconds": 0.2
+  },
+  {
+    "fold": "202101-202112",
+    "model": "gbrt",
+    "seconds": 0.6
+  },
+  {
+    "fold": "202101-202112",
+    "model": "nn3_mse",
+    "seconds": 19.1
+  },
+  {
+    "fold": "202101-202112",
+    "model": "xs_mse",
+    "seconds": 99.0
+  },
+  {
+    "fold": "202101-202112",
+    "model": "xs_ic",
+    "seconds": 22.1
+  },
+  {
+    "fold": "202101-202112",
+    "model": "xs_sharpe",
+    "seconds": 61.5
+  },
+  {
+    "fold": "202101-202112",
+    "model": "xs_utility",
+    "seconds": 83.2
+  },
+  {
+    "fold": "202201-202212",
+    "model": "ols_h",
+    "seconds": 0.4
+  },
+  {
+    "fold": "202201-202212",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "202201-202212",
+    "model": "enet",
+    "seconds": 0.9
+  },
+  {
+    "fold": "202201-202212",
+    "model": "pls",
+    "seconds": 0.2
+  },
+  {
+    "fold": "202201-202212",
+    "model": "gbrt",
+    "seconds": 0.7
+  },
+  {
+    "fold": "202201-202212",
+    "model": "nn3_mse",
+    "seconds": 20.4
+  },
+  {
+    "fold": "202201-202212",
+    "model": "xs_mse",
+    "seconds": 119.3
+  },
+  {
+    "fold": "202201-202212",
+    "model": "xs_ic",
+    "seconds": 25.7
+  },
+  {
+    "fold": "202201-202212",
+    "model": "xs_sharpe",
+    "seconds": 55.2
+  },
+  {
+    "fold": "202201-202212",
+    "model": "xs_utility",
+    "seconds": 37.5
+  },
+  {
+    "fold": "202301-202311",
+    "model": "ols_h",
+    "seconds": 0.3
+  },
+  {
+    "fold": "202301-202311",
+    "model": "ridge",
+    "seconds": 0.0
+  },
+  {
+    "fold": "202301-202311",
+    "model": "enet",
+    "seconds": 1.4
+  },
+  {
+    "fold": "202301-202311",
+    "model": "pls",
+    "seconds": 0.2
+  },
+  {
+    "fold": "202301-202311",
+    "model": "gbrt",
+    "seconds": 0.9
+  },
+  {
+    "fold": "202301-202311",
+    "model": "nn3_mse",
+    "seconds": 20.1
+  },
+  {
+    "fold": "202301-202311",
+    "model": "xs_mse",
+    "seconds": 86.1
+  },
+  {
+    "fold": "202301-202311",
+    "model": "xs_ic",
+    "seconds": 32.5
+  },
+  {
+    "fold": "202301-202311",
+    "model": "xs_sharpe",
+    "seconds": 48.1
+  },
+  {
+    "fold": "202301-202311",
+    "model": "xs_utility",
+    "seconds": 34.5
+  }
+]

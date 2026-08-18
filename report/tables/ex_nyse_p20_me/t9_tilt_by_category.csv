@@ -1,0 +1,11 @@
+model,category,mean,count
+xs_utility,momentum,0.00771,191
+xs_utility,valuation,0.00302,191
+xs_utility,long_term_reversal,0.00215,191
+xs_utility,lead_lag,0.00095,191
+xs_utility,other,0.00076,191
+xs_utility,liquidity,0.00019,191
+xs_utility,external_financing,-0.00128,191
+xs_utility,investment,-0.0033,191
+xs_utility,earnings_forecast,-0.00478,191
+xs_utility,investment_alt,-0.00609,191

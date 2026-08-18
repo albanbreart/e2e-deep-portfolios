@@ -1,0 +1,6 @@
+model,cost_quintile,mean_tilt,mean_turnover,n
+xs_utility,1,-0.00094,0.019,7300
+xs_utility,2,-0.00118,0.031,7137
+xs_utility,3,-0.00084,0.164,7157
+xs_utility,4,0.00229,0.743,7137
+xs_utility,5,0.00068,2.658,7223

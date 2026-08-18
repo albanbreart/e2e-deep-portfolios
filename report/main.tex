@@ -321,6 +321,69 @@ the 25\,bp base case; the grey band spans the seven unnamed models.}
 \label{fig:cost}
 \end{figure}
 
+\section{Capacity: does any of this survive in tradable stocks?}
+
+Published anomaly returns are concentrated in small, illiquid names, so a result
+obtained on the unrestricted universe may describe a portfolio no fund could run.
+The release distributes every anomaly rebuilt using only stocks above the NYSE
+20th percentile of market capitalisation; we repeat the entire study on that
+universe, refitting every model on its own walk-forward folds.
+
+The restriction is expensive before a single basis point of cost. The mean
+long-short return falls from 0.499\% to 0.348\% per month, and at zero assumed
+cost the benchmark's Sharpe ratio falls from 1.32 to 0.80 --- a 40\% haircut.
+Table~\ref{tab:capacity} shows what is left after costs.
+
+\begin{table}[t]
+\centering\small
+\caption{Net Sharpe ratio in both universes. The right-hand columns sweep the
+assumed one-way stock trading cost; 12.5\,bp is arguably the right figure for a
+large-capitalisation universe, and 25\,bp the right one for the unrestricted
+sample.}
+\label{tab:capacity}
+\begin{tabular}{lrrrrr}
+\toprule
+& \multicolumn{2}{c}{All stocks} & & \multicolumn{2}{c}{Large caps only} \\
+\cmidrule(lr){2-3}\cmidrule(lr){5-6}
+Model & 12.5\,bp & 25\,bp & & 12.5\,bp & 25\,bp \\
+\midrule
+\texttt{xs\_utility}   & 0.90 & \textbf{0.45} & & 0.26 & $-0.25$ \\
+\texttt{xs\_sharpe}    & 0.79 & 0.40 & & 0.20 & $-0.28$ \\
+\rowcolor{black!7}
+\texttt{equal\_weight} & 0.86 & 0.39 & & \textbf{0.34} & $-0.12$ \\
+\texttt{xs\_ic}        & 0.67 & 0.19 & & 0.04 & $-0.59$ \\
+\texttt{enet}          & 0.30 & $-0.30$ & & $-0.13$ & $-0.85$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two things follow, and the second is the more important.
+
+\paragraph{The ranking of objectives survives; the edge does not.} The rank
+correlation of net Sharpe ratios across the two universes is $+0.75$: cost-aware
+objectives still beat cost-blind ones, and \texttt{enet} is still last. The
+paper's claim about \emph{objectives} is therefore not an artefact of an
+untradable sample. But every point in Figure~\ref{fig:capacity} lies below the
+45-degree line and every one is negative --- at 25\,bp, nothing in the tradable
+universe makes money, benchmark included.
+
+\paragraph{Where the model's advantage does survive, it reverses.} At 12.5\,bp,
+a defensible cost for large capitalisations, the best allocation in the tradable
+universe is \textbf{equal weighting} (0.34), ahead of \texttt{xs\_utility}
+(0.26) and \texttt{xs\_sharpe} (0.20). The cost-aware models beat $1/N$ in the
+universe where anomalies are strong and expensive, and lose to it in the universe
+where they are weak and cheap. Read together with \S5, the honest summary of this
+project is narrow: \emph{the choice of training objective reliably separates good
+ML allocation from bad, and no version of it reliably beats doing nothing.}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/f9_capacity.pdf}
+\caption{Net Sharpe ratio of the same models in both universes, at the 25\,bp
+base case. Every model falls below the 45-degree line.}
+\label{fig:capacity}
+\end{figure}
+
 \section{Conclusion and extensions}
 
 Training a network on net-of-cost portfolio profit rather than on forecast error
@@ -333,11 +396,10 @@ benchmark that requires no model at all.
 Three extensions follow directly. First, the no-trade band: our allocator
 rebalances every month by construction, whereas the natural response to a
 turnover penalty is a hold region, and solving for it explicitly should widen the
-gap this paper measures. Second, capacity: the release also distributes each
-anomaly rebuilt on stocks above the NYSE 20th percentile of market
-capitalisation, and repeating the study there would separate an edge that survives
-at size from one that does not; the download and loader for those files are already
-in the repository. Third, sample length: 203 out-of-sample months cannot resolve a
+gap this paper measures. Second, a lower-cost tradable universe: \S6 shows the large-cap
+result hinges on the assumed spread, and a proper treatment would estimate the
+spread per anomaly from the actual market capitalisations it holds rather than
+applying one number to the whole universe. Third, sample length: 203 out-of-sample months cannot resolve a
 0.06 difference in Sharpe ratio, and the point-in-time publication screen is what
 costs us the earlier data --- relaxing it would be dishonest, but reporting the
 hindsight-universe result alongside would bound how much the screen costs.

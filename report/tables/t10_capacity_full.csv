@@ -1,0 +1,23 @@
+universe,model,ret_gross,ret_net,sharpe_gross,sharpe_net,t_net,turnover
+all stocks,xs_utility,0.146,0.048,1.375,0.452,1.534,0.667
+all stocks,xs_sharpe,0.133,0.044,1.207,0.396,1.481,0.622
+all stocks,equal_weight,0.094,0.028,1.317,0.391,1.438,0.091
+all stocks,xs_ic,0.126,0.021,1.165,0.194,0.821,0.911
+all stocks,nn3_mse,0.119,0.02,1.067,0.175,0.73,0.882
+all stocks,gbrt,0.113,-0.001,1.026,-0.007,-0.03,1.165
+all stocks,xs_mse,0.119,-0.002,1.068,-0.02,-0.081,1.165
+all stocks,pls,0.104,-0.004,0.957,-0.034,-0.145,1.046
+all stocks,ols_h,0.114,-0.008,1.04,-0.068,-0.292,1.227
+all stocks,ridge,0.105,-0.011,0.972,-0.102,-0.421,1.169
+all stocks,enet,0.101,-0.033,0.936,-0.296,-1.206,1.536
+large caps only,equal_weight,0.058,-0.009,0.797,-0.119,-0.385,0.083
+large caps only,xs_utility,0.085,-0.027,0.799,-0.254,-0.82,0.755
+large caps only,xs_sharpe,0.074,-0.03,0.694,-0.277,-0.918,0.778
+large caps only,nn3_mse,0.085,-0.045,0.77,-0.402,-1.475,1.203
+large caps only,pls,0.077,-0.05,0.691,-0.442,-1.693,1.232
+large caps only,ridge,0.08,-0.052,0.721,-0.46,-1.733,1.315
+large caps only,gbrt,0.091,-0.054,0.842,-0.486,-1.736,1.467
+large caps only,xs_ic,0.079,-0.067,0.714,-0.595,-2.184,1.318
+large caps only,xs_mse,0.08,-0.071,0.729,-0.636,-2.329,1.544
+large caps only,ols_h,0.074,-0.073,0.681,-0.658,-2.41,1.482
+large caps only,enet,0.068,-0.095,0.63,-0.852,-2.95,1.921

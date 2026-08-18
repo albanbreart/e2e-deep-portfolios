@@ -1,0 +1,72 @@
+[
+  {
+    "name": "ols_h",
+    "kind": "baseline",
+    "estimator": "ols_h",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "ridge",
+    "kind": "baseline",
+    "estimator": "ridge",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "enet",
+    "kind": "baseline",
+    "estimator": "enet",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "pls",
+    "kind": "baseline",
+    "estimator": "pls",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "gbrt",
+    "kind": "baseline",
+    "estimator": "gbrt",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "nn3_mse",
+    "kind": "net",
+    "estimator": "nn3",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "xs_mse",
+    "kind": "net",
+    "estimator": "xs_small",
+    "loss": "mse",
+    "kwargs": {}
+  },
+  {
+    "name": "xs_ic",
+    "kind": "net",
+    "estimator": "xs_small",
+    "loss": "ic",
+    "kwargs": {}
+  },
+  {
+    "name": "xs_sharpe",
+    "kind": "net",
+    "estimator": "xs_small",
+    "loss": "sharpe",
+    "kwargs": {}
+  },
+  {
+    "name": "xs_utility",
+    "kind": "net",
+    "estimator": "xs_small",
+    "loss": "utility",
+    "kwargs": {}
+  }
+]

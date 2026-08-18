@@ -81,6 +81,44 @@ close to the full anomaly universe. The edge is in *not rebalancing*, not in
 
 ![Where the gross return goes](report/figures/f6_cost_decomposition.png)
 
+## Capacity: does any of this survive in tradable stocks?
+
+Published anomaly returns concentrate in small, illiquid names. The Open Source
+Asset Pricing release also distributes every anomaly rebuilt using only stocks
+above the NYSE 20th percentile of market capitalisation, so the whole study is
+repeated on that universe — same folds, same objectives, every model refitted
+(`make capacity`).
+
+The restriction costs a great deal before a single basis point of trading cost:
+mean long-short return falls from 0.499% to 0.348% per month, and at zero assumed
+cost the benchmark's Sharpe drops from 1.32 to 0.80.
+
+| Net Sharpe | All stocks @ 12.5 bps | @ 25 bps | Large caps @ 12.5 bps | @ 25 bps |
+|---|---|---|---|---|
+| `xs_utility` | 0.90 | **0.45** | 0.26 | −0.25 |
+| `xs_sharpe` | 0.79 | 0.40 | 0.20 | −0.28 |
+| `equal_weight` | 0.86 | 0.39 | **0.34** | −0.12 |
+| `xs_ic` | 0.67 | 0.19 | 0.04 | −0.59 |
+| `enet` | 0.30 | −0.30 | −0.13 | −0.85 |
+
+**The ranking of objectives survives; the edge does not.** The rank correlation of
+net Sharpe across the two universes is +0.75, so the claim about *objectives* is
+not an artefact of an untradable sample — cost-aware still beats cost-blind, `enet`
+is still last. But every model falls below the 45° line, and at 25 bps nothing in
+the tradable universe makes money, benchmark included.
+
+**And where the advantage does survive, it reverses.** At 12.5 bps — a defensible
+cost for large caps — the best allocation in the tradable universe is **equal
+weighting** (0.34), ahead of `xs_utility` (0.26). The cost-aware models beat 1/N
+in the universe where anomalies are strong and expensive, and lose to it where
+they are weak and cheap.
+
+![Does the edge survive in tradable stocks?](report/figures/f9_capacity.png)
+
+Taken with the headline result, the honest summary of this project is narrow and
+worth stating as such: **the choice of training objective reliably separates good
+ML allocation from bad, and no version of it reliably beats doing nothing.**
+
 ## Data — all of it free
 
 No paid subscription is needed; `make all` reproduces every number from a clean
@@ -206,6 +244,7 @@ make data       # ~2.4 GB download, then ~10 min to measure anomaly turnover
 make panel      # build the panel and its features
 make smoke      # 3 folds, 1 seed: end-to-end in minutes
 make all        # the full slate (~2.5 h on an M-series laptop)
+make capacity   # rerun on large caps only, then compare (~2.5 h)
 ```
 
 `make evaluate` regenerates every table and figure from cached predictions in
@@ -256,6 +295,10 @@ Stated plainly, because the ones a reader finds for themselves are worse.
 - **The cost model is a schedule, not a market.** Real impact is convex in
   participation rate and varies with volatility. The break-even column and the
   cost-sensitivity figure exist so a reader can substitute their own beliefs.
+- **One spread for the whole universe.** The capacity result at 12.5 bps versus
+  25 bps flips which allocation wins, and a proper treatment would estimate the
+  spread per anomaly from the market capitalisations it actually holds rather
+  than applying a single number.
 - **Anomaly returns are Chen & Zimmermann's replications**, not a fund's own
   implementation. They are careful and transparent, but they are replications.
 - **Monthly rebalancing is assumed** throughout; a real book would trade against a
