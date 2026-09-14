@@ -22,7 +22,7 @@ dependencies = [
     "matplotlib>=3.8",
     "pyyaml>=6.0",
     "requests>=2.31",
-    "openassetpricing>=1.2",
+    "openassetpricing>=0.0.2",
 ]
 
 [project.optional-dependencies]

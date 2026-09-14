@@ -1,5 +1,7 @@
 # Cost-aware deep allocation across published asset-pricing anomalies
 
+[![CI](https://github.com/albanbreart/e2e-deep-portfolios/actions/workflows/ci.yml/badge.svg)](https://github.com/albanbreart/e2e-deep-portfolios/actions/workflows/ci.yml)
+
 **Machine Learning in Finance (FIN-407), EPFL — project.**
 
 Most machine-learning work on asset returns minimises squared forecast error and
@@ -256,6 +258,18 @@ use it so a throwaway run can never overwrite an expensive panel.
 ```bash
 make test    # 52 tests
 ```
+
+Every push runs `make setup`, `make lint` and `make test` on a bare Ubuntu runner
+under Python 3.11 and 3.13 (`.github/workflows/ci.yml`). Installing on a clean
+machine is itself part of what is tested: the first CI run rejected the dependency
+list, because `openassetpricing>=1.2` had been pinned against a version that does
+not exist on PyPI — a constraint that resolved silently in a warm local
+environment and made `make setup` fail for everyone else.
+
+The suite needs no data download, no WRDS credentials and no network, which is
+what makes it runnable in CI at all. The research pipeline itself is not run
+there: `make all` needs 2.4 GB of inputs and hours of compute. The synthetic
+tests stand in for it by construction, not by coincidence.
 
 Built around synthetic panels where the answer is known by construction:
 
