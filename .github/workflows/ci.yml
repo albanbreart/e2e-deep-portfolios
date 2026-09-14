@@ -1,0 +1,73 @@
+# Continuous integration for xsdp.
+#
+# What this guards, in order of what it would actually catch:
+#
+#   1. That the project still installs from a clean machine.  `pip install -e .`
+#      on a bare runner is the only honest test of the dependency list: a
+#      constraint that resolves against a developer's warm environment can be
+#      unsatisfiable everywhere else, and that failure is invisible locally.
+#   2. That the 52 tests still pass.  They run entirely on synthetic panels with
+#      a planted signal, so they need no data download, no WRDS credentials and
+#      no network -- which is what makes them runnable here at all.
+#   3. That the linting rules the project sets for itself are still met.
+#
+# What this does NOT guard, deliberately: the research pipeline itself.
+# `make all` needs 2.4 GB of downloads and hours of compute.  The tests stand in
+# for it by construction, not by coincidence -- see tests/conftest.py.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# A new push supersedes the run it interrupts; no point paying for both.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: ruff
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff
+      - run: make lint
+
+  test:
+    name: pytest (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        # The lowest version the project claims to support, and the one it is
+        # developed on.  Anything in between is interpolation.
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      # PyPI's default torch wheel for Linux carries the CUDA runtime: ~2.5 GB
+      # downloaded to run on a CPU runner that has no GPU.  Pull the CPU build
+      # first so the resolver finds it already satisfied.
+      - name: Install CPU-only PyTorch
+        run: pip install --index-url https://download.pytorch.org/whl/cpu torch
+
+      - name: Install the package the way the README says to
+        run: make setup
+
+      - name: Run the test suite
+        run: make test
